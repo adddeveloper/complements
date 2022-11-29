@@ -1,5 +1,6 @@
 var ddata;
 var mssg__ = document.getElementById("mssg__");
+var randnum;
 
 fetch("data/you.json")
 .then (res=>res.json())
@@ -8,7 +9,7 @@ fetch("data/you.json")
     if(window.location.href.split("#")[1]){
         mssg__.innerHTML = ddata[parseInt(window.location.href.split("#")[1])];
     } else {
-        var randnum = Math.floor(Math.random()* ddata.length)
+        randnum = Math.floor(Math.random()* ddata.length)
         mssg__.innerHTML = ddata[randnum];
     }
 })
@@ -35,8 +36,8 @@ function link__() {
     copyText.setSelectionRange(0, 99999); // For mobile devices
 
     // Copy the text inside the text field
-    (window.location.href)
-    navigator.clipboard.writeText();
+    var ccpy = window.location.href + "#" + randnum;
+    navigator.clipboard.writeText(ccpy);
 }
 
 function email__() {
@@ -58,7 +59,7 @@ items.forEach((e,i)=>{
             console.log("email")
             break
         case 2:
-            link__()
+            e.addEventListener("click", link__());
             console.log("link")
             break
     }
