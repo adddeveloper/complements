@@ -48,6 +48,10 @@ p {
     color: black !important;
 }
 
+#coppied > div > span{
+    cursor: pointer;
+}
+
 .border-grey > div > span {
     color: #333;
 }
