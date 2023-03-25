@@ -53,7 +53,7 @@ function img__() {
 
 function contact__(){
     var a = document.createElement("a");
-    a.href = "https://www.adnans.ml/contact-me/";
+    a.href = "https://www.adnans.website/contact-me/";
     a.target = "_blank";
     a.click();
 }
